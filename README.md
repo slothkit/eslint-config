@@ -11,8 +11,8 @@ npm i -D @slothkit/eslint-config
 
 3\. Choose the appropriate extension configuration based on the technology stack:
 
-||||
-|-|-|-|
+|Technology Stack|Extends|
+|-|-|
 |JavaScript|@slothkit/eslint-config/base|
 |TypeScript|@slothkit/eslint-config/typescript|
 |React|@slothkit/eslint-config/base and @slothkit/eslint-config/rules/react|

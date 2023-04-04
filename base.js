@@ -80,6 +80,10 @@ module.exports = {
     }],
 
     /* imports */
+    // In order to provide a consistent use of file extensions across your code base, this rule can enforce or disallow the use of certain file extensions.
+    // https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/extensions.md
+    'import/extensions': 'off',
+
     // do not allow a default import name to match a named export
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
     'import/no-named-as-default': 'off',
@@ -133,6 +137,9 @@ module.exports = {
 
     // require camel case names
     camelcase: ['off', { properties: 'never', ignoreDestructuring: false }],
+
+    // Enforce that class methods utilize this
+    'class-methods-use-this': 'off',
 
     // require trailing commas in multiline object literals
     'comma-dangle': ['warn', {
@@ -253,6 +260,10 @@ module.exports = {
     // disallow multiple empty lines, only one newline at the end, and no new lines at the beginning
     // https://eslint.org/docs/rules/no-multiple-empty-lines
     'no-multiple-empty-lines': ['warn', { max: 1, maxBOF: 0, maxEOF: 0 }],
+
+    // Disallow reassigning function parameters
+    // https://eslint.org/docs/latest/rules/no-param-reassign
+    'no-param-reassign': 'off',
 
     // disallow use of unary operators, ++ and --
     // https://eslint.org/docs/rules/no-plusplus

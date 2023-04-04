@@ -11,8 +11,8 @@ npm i -D @slothkit/eslint-config
 
 3\. 根据技术栈不同，选择合适的扩展配置：
 
-||||
-|-|-|-|
+|技术栈|扩展|
+|-|-|
 |JavaScript|@slothkit/eslint-config/base|
 |TypeScript|@slothkit/eslint-config/typescript|
 |React|@slothkit/eslint-config/base 和 @slothkit/eslint-config/rules/react|
