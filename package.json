@@ -1,6 +1,6 @@
 {
   "name": "@slothkit/eslint-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "eslint shareable configs",
   "main": "index.js",
   "exports": {
