@@ -1,3 +1,9 @@
+![npm (scoped)](https://img.shields.io/npm/v/@slothkit/eslint-config)
+![GitHub last commit](https://img.shields.io/github/last-commit/slothkit/eslint-config)
+![npm](https://img.shields.io/npm/dt/@slothkit/eslint-config)
+
+[中文文档](./README.zh_CN.md)
+
 This package provides simplified and less strict validation rules based on Airbnb's eslint rules.
 
 ## Usage

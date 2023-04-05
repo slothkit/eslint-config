@@ -1,3 +1,7 @@
+![npm (scoped)](https://img.shields.io/npm/v/@slothkit/eslint-config)
+![GitHub last commit](https://img.shields.io/github/last-commit/slothkit/eslint-config)
+![npm](https://img.shields.io/npm/dt/@slothkit/eslint-config)
+
 这个包基于 Airbnb 的 eslint 规则提供简化的、不太严格的校验规则。
 
 # 用法
