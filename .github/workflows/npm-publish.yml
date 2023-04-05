@@ -2,8 +2,6 @@ name: Npm Publish
 
 on:
   push:
-    branches:
-      - main
     tags:
       - v*
 
