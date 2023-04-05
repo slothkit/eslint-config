@@ -1,6 +1,6 @@
 {
   "name": "@slothkit/eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "eslint shareable configs",
   "main": "index.js",
   "exports": {
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/slothkit/eslint-config#readme",
   "scripts": {
     "commit": "git add . && cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "test": "eslint --report-unused-disable-directives ."
   },
   "peerDependencies": {
