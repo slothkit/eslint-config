@@ -6,7 +6,7 @@ module.exports = {
     /* es6 */
     // enforces no braces where they can be omitted
     // https://eslint.org/docs/rules/arrow-body-style
-    'arrow-body-style': ['warn', 'as-needed', {
+    'arrow-body-style': ['off', 'as-needed', {
       requireReturnForObjectLiteral: false,
     }],
     // require parens in arrow function arguments
@@ -170,8 +170,16 @@ module.exports = {
       },
     }],
 
+    // Enforce dot notation whenever possible
+    // https://eslint.org/docs/latest/rules/dot-notation
+    'dot-notation': 'off',
+
     // enforce newline at the end of file, with no multiple empty lines
     'eol-last': ['warn', 'always'],
+
+    // dot-notation
+    // https://eslint.org/docs/latest/rules/eqeqeq
+    eqeqeq: 'off',
 
     // require function expressions to have a name
     // https://eslint.org/docs/rules/func-names
@@ -180,6 +188,10 @@ module.exports = {
     // require line breaks inside function parentheses if there are line breaks between parameters
     // https://eslint.org/docs/rules/function-paren-newline
     'function-paren-newline': ['off', 'multiline-arguments'],
+
+    // Require for-in loops to include an if statement
+    // https://eslint.org/docs/latest/rules/guard-for-in
+    'guard-for-in': 'off',
 
     // Enforce the location of arrow function bodies with implicit returns
     // https://eslint.org/docs/rules/implicit-arrow-linebreak
@@ -249,13 +261,29 @@ module.exports = {
     // https://eslint.org/docs/rules/newline-per-chained-call
     'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 4 }],
 
+    // Disallow await inside of loops
+    // https://eslint.org/docs/latest/rules/no-await-in-loop
+    'no-await-in-loop': 'off',
+
     // disallow use of bitwise operators
     // https://eslint.org/docs/rules/no-bitwise
     'no-bitwise': 'off',
 
+    // Disallow the use of console
+    // https://eslint.org/docs/latest/rules/no-console
+    'no-console': 'off',
+
     // disallow use of the continue statement
     // https://eslint.org/docs/rules/no-continue
     'no-continue': 'off',
+
+    // Disallow control characters in regular expressions
+    // https://eslint.org/docs/latest/rules/no-control-regex
+    'no-control-regex': 'off',
+
+    // Disallow else blocks after return statements in if statements
+    // https://eslint.org/docs/latest/rules/no-else-return
+    'no-else-return': 'off',
 
     // disallow multiple empty lines, only one newline at the end, and no new lines at the beginning
     // https://eslint.org/docs/rules/no-multiple-empty-lines
