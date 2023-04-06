@@ -46,9 +46,21 @@ module.exports = {
       checkChildContextTypes: true,
     }],
 
+    // When using a boolean attribute in JSX, you can set the attribute value to true or omit the value.
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
+    'react/jsx-boolean-value': 'warn',
+
     // Prevent usage of .bind() in JSX props
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
     'react/jsx-no-bind': ['off'],
+
+    // A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md
+    'react/jsx-no-useless-fragment': 'off',
+
+    // Creating components inside components (nested components) will cause React to throw away the state of those nested components on each re-render of their parent.
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md
+    'react/no-unstable-nested-components': 'off',
 
     // Prevent missing props validation in a React component definition
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
