@@ -72,7 +72,7 @@ module.exports = {
 
     // import sorting
     // https://eslint.org/docs/rules/sort-imports
-    'sort-imports': ['off', {
+    'sort-imports': ['warn', {
       ignoreCase: false,
       ignoreDeclarationSort: true,
       ignoreMemberSort: false,
