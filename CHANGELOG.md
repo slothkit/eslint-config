@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/slothkit/eslint-config/compare/v1.1.0...v1.2.0) (2023-04-10)
+
+
+### Features
+
+* **rules:** enable sort-imports ([6571824](https://github.com/slothkit/eslint-config/commit/657182431605fe2b0adec23face61ee3c269ca83))
+
+
+
 # [1.1.0](https://github.com/slothkit/eslint-config/compare/v1.0.0...v1.1.0) (2023-04-06)
 
 
