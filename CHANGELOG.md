@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/slothkit/eslint-config/compare/v1.2.0...v1.3.0) (2024-01-16)
+
+
+### Features
+
+* **deps:** bump [@typescript-eslint](https://github.com/typescript-eslint) version ([8878616](https://github.com/slothkit/eslint-config/commit/88786169bc02e4a5e69f262ce613b4f34caf2312))
+
+
+
 # [1.2.0](https://github.com/slothkit/eslint-config/compare/v1.1.0...v1.2.0) (2023-04-10)
 
 
