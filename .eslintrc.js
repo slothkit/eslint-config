@@ -8,16 +8,27 @@ module.exports = {
     es6: true,
   },
   extends: [
-    './index',
+    './base',
+    './rules/react',
     // 'prettier'
   ].map(require.resolve),
   // When using TypeScript, enabling this configuration is necessary.
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      extends: [
+        './typescript',
+      ].map(require.resolve),
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
+      },
+    },
+  ],
   rules: {
     // 'prettier/prettier': 'warn',
   },

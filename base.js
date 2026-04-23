@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'eslint-config-airbnb/base',
+    './vendor/airbnb/base',
   ].map(require.resolve),
   rules: {
     /* es6 */
