@@ -13,42 +13,49 @@ This package provides simplified and less strict lint rules based on vendored Ai
 npm i -D eslint@^9 @slothkit/eslint-config
 ```
 
-2. Create or update your `.eslintrc.js`:
+2. Create or update `eslint.config.js`:
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@slothkit/eslint-config'],
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-  },
-}
+const sloth = require('@slothkit/eslint-config')
+
+module.exports = [...sloth]
 ```
 
-3. Add lint script for ESLint 9 (`eslintrc` mode):
+3. Add lint script:
 
 ```json
 {
   "scripts": {
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   }
 }
 ```
 
 4. Choose the proper extension config by stack:
 
-| Technology Stack | Extends |
+| Technology Stack | Config |
 | - | - |
-| JavaScript | `@slothkit/eslint-config/base` |
-| TypeScript | `@slothkit/eslint-config/typescript` |
-| React | `@slothkit/eslint-config/base` + `@slothkit/eslint-config/rules/react` |
-| TypeScript + React | `@slothkit/eslint-config` |
+| JavaScript | `...require('@slothkit/eslint-config/base')` |
+| TypeScript | `...require('@slothkit/eslint-config/typescript')` |
+| React | `...require('@slothkit/eslint-config/base')` + `...require('@slothkit/eslint-config/rules/react')` |
+| TypeScript + React | `...require('@slothkit/eslint-config')` |
 
-If your project is JavaScript-only, use `@slothkit/eslint-config/base` and you can omit `parserOptions.project`.
+For TypeScript configs, set parser options in your `eslint.config.js`:
+
+```js
+{
+  files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
+  languageOptions: {
+    parserOptions: {
+      project: './tsconfig.json',
+      tsconfigRootDir: __dirname,
+    },
+  },
+}
+```
 
 ## Breaking Change
-This major upgrade targets `eslint@^9` only.
+This major upgrade is Flat Config only and targets `eslint@^9` only.
 
 ## Local Integration Test (Recommended)
 1. In this repo, pack the local package:
@@ -63,15 +70,14 @@ pnpm pack
 npm i -D /absolute/path/to/slothkit-eslint-config-<version>.tgz
 ```
 
-3. Update the target project's lint script:
+3. Configure target project's `eslint.config.js` and lint script:
 
 ```json
 {
   "scripts": {
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   }
 }
 ```
 
 4. Run lint in the target project and verify no config/rule loading errors.
-For TypeScript projects, make sure the target project has a valid `tsconfig.json` and `parserOptions.project`.

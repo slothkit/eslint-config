@@ -1,7 +1,5 @@
-module.exports = {
-  extends: [
-    './base',
-    './rules/react',
-    './typescript'
-  ].map(require.resolve),
-}
+module.exports = [
+  ...require('./base'),
+  ...require('./rules/react'),
+  ...require('./typescript'),
+]

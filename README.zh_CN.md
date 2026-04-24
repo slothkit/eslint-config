@@ -11,25 +11,20 @@
 npm i -D eslint@^9 @slothkit/eslint-config
 ```
 
-2. 创建或修改 `.eslintrc.js`：
+2. 创建或修改 `eslint.config.js`：
 
 ```js
-module.exports = {
-  root: true,
-  extends: ['@slothkit/eslint-config'],
-  parserOptions: {
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-  },
-}
+const sloth = require('@slothkit/eslint-config')
+
+module.exports = [...sloth]
 ```
 
-3. 在 `package.json` 中增加 lint 命令（ESLint 9 的 eslintrc 模式）：
+3. 在 `package.json` 中增加 lint 命令：
 
 ```json
 {
   "scripts": {
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   }
 }
 ```
@@ -38,15 +33,27 @@ module.exports = {
 
 | 技术栈 | 扩展 |
 | - | - |
-| JavaScript | `@slothkit/eslint-config/base` |
-| TypeScript | `@slothkit/eslint-config/typescript` |
-| React | `@slothkit/eslint-config/base` 和 `@slothkit/eslint-config/rules/react` |
-| TypeScript + React | `@slothkit/eslint-config` |
+| JavaScript | `...require('@slothkit/eslint-config/base')` |
+| TypeScript | `...require('@slothkit/eslint-config/typescript')` |
+| React | `...require('@slothkit/eslint-config/base')` 和 `...require('@slothkit/eslint-config/rules/react')` |
+| TypeScript + React | `...require('@slothkit/eslint-config')` |
 
-如果是纯 JavaScript 项目，建议使用 `@slothkit/eslint-config/base`，并且可以省略 `parserOptions.project`。
+TypeScript 配置需要在 `eslint.config.js` 里补充 parser 配置：
+
+```js
+{
+  files: ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts'],
+  languageOptions: {
+    parserOptions: {
+      project: './tsconfig.json',
+      tsconfigRootDir: __dirname,
+    },
+  },
+}
+```
 
 ## 破坏性变更
-本次大版本升级仅支持 `eslint@^9`。
+本次大版本升级仅支持 `eslint@^9`，并且只支持 Flat Config。
 
 ## 本地接入真实项目验证（推荐）
 1. 在当前仓库打包：
@@ -61,15 +68,14 @@ pnpm pack
 npm i -D /绝对路径/slothkit-eslint-config-<version>.tgz
 ```
 
-3. 在业务项目设置 lint 命令：
+3. 在业务项目配置 `eslint.config.js` 和 lint 命令：
 
 ```json
 {
   "scripts": {
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint ."
+    "lint": "eslint ."
   }
 }
 ```
 
 4. 运行 lint，确认没有配置加载错误和规则不存在错误。
-TypeScript 项目还需要确保业务项目存在有效的 `tsconfig.json`，并配置 `parserOptions.project`。
