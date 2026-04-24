@@ -1,3 +1,16 @@
+## [2.0.0](https://github.com/slothkit/eslint-config/compare/v1.3.0...v2.0.0) (2026-04-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* switch package to flat config only for eslint 9
+* migrate config package to eslint 9 and vendor airbnb rules
+
+### Features
+
+* migrate config package to eslint 9 and vendor airbnb rules ([a83175b](https://github.com/slothkit/eslint-config/commit/a83175b4ec43f4a9c10e52de1d97ea54ddb252bb))
+* switch package to flat config only for eslint 9 ([75ae6e8](https://github.com/slothkit/eslint-config/commit/75ae6e8db73a1075645ea7c3bd277170f663dc70))
+
 # [1.3.0](https://github.com/slothkit/eslint-config/compare/v1.2.0...v1.3.0) (2024-01-16)
 
 
@@ -31,6 +44,5 @@
 ### Features
 
 first version ([c90e4c2](https://github.com/slothkit/eslint-config/commit/c90e4c22d9602904cb0f6d1bcbfa3f7e563d267d))
-
 
 
