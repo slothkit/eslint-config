@@ -35,10 +35,10 @@ module.exports = [...sloth]
 
 | Technology Stack | Config |
 | - | - |
-| JavaScript | `...require('@slothkit/eslint-config/base')` |
-| TypeScript | `...require('@slothkit/eslint-config/typescript')` |
-| React | `...require('@slothkit/eslint-config/base')` + `...require('@slothkit/eslint-config/rules/react')` |
-| TypeScript + React | `...require('@slothkit/eslint-config')` |
+| JavaScript | `@slothkit/eslint-config/base` |
+| TypeScript | `@slothkit/eslint-config/typescript` |
+| React | `@slothkit/eslint-config/base` + `@slothkit/eslint-config/rules/react` |
+| TypeScript + React | `@slothkit/eslint-config` |
 
 For TypeScript configs, set parser options in your `eslint.config.js`:
 
@@ -53,31 +53,3 @@ For TypeScript configs, set parser options in your `eslint.config.js`:
   },
 }
 ```
-
-## Breaking Change
-This major upgrade is Flat Config only and targets `eslint@^9` only.
-
-## Local Integration Test (Recommended)
-1. In this repo, pack the local package:
-
-```bash
-pnpm pack
-```
-
-2. In your real project, install the generated tarball:
-
-```bash
-npm i -D /absolute/path/to/slothkit-eslint-config-<version>.tgz
-```
-
-3. Configure target project's `eslint.config.js` and lint script:
-
-```json
-{
-  "scripts": {
-    "lint": "eslint ."
-  }
-}
-```
-
-4. Run lint in the target project and verify no config/rule loading errors.

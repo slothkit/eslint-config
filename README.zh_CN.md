@@ -33,10 +33,10 @@ module.exports = [...sloth]
 
 | 技术栈 | 扩展 |
 | - | - |
-| JavaScript | `...require('@slothkit/eslint-config/base')` |
-| TypeScript | `...require('@slothkit/eslint-config/typescript')` |
-| React | `...require('@slothkit/eslint-config/base')` 和 `...require('@slothkit/eslint-config/rules/react')` |
-| TypeScript + React | `...require('@slothkit/eslint-config')` |
+| JavaScript | `@slothkit/eslint-config/base` |
+| TypeScript | `@slothkit/eslint-config/typescript` |
+| React | `@slothkit/eslint-config/base` 和 `@slothkit/eslint-config/rules/react` |
+| TypeScript + React | `@slothkit/eslint-config` |
 
 TypeScript 配置需要在 `eslint.config.js` 里补充 parser 配置：
 
@@ -51,31 +51,3 @@ TypeScript 配置需要在 `eslint.config.js` 里补充 parser 配置：
   },
 }
 ```
-
-## 破坏性变更
-本次大版本升级仅支持 `eslint@^9`，并且只支持 Flat Config。
-
-## 本地接入真实项目验证（推荐）
-1. 在当前仓库打包：
-
-```bash
-pnpm pack
-```
-
-2. 在你的业务项目安装本地 tarball：
-
-```bash
-npm i -D /绝对路径/slothkit-eslint-config-<version>.tgz
-```
-
-3. 在业务项目配置 `eslint.config.js` 和 lint 命令：
-
-```json
-{
-  "scripts": {
-    "lint": "eslint ."
-  }
-}
-```
-
-4. 运行 lint，确认没有配置加载错误和规则不存在错误。
